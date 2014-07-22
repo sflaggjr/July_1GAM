@@ -33,6 +33,7 @@ jumpspeed = 7;
 movespeed = 4;
 facing = p_idle;
 image_speed = 0.5;
+jumping = false;
 
 </string>
           </argument>
@@ -97,6 +98,7 @@ if (place_meeting(x, y + vspd, obj_wall))
                  y += sign(vspd);
             }
         vspd = 0;
+        jumping = false;
      } 
 //Update player facing
 if (move = 0)
@@ -110,6 +112,10 @@ if (move = 1)
 if (move = -1)
     {   
         facing = p_left;
+    }
+if (key_jump = 1)
+    {
+        jumping = true;
     }
         
 /*Ladders: Currently not functioning, however not breaking the game at this point.
@@ -150,17 +156,25 @@ y += vspd;
             <kind>1</kind>
             <string>///Drawing sprites
 
-if facing = p_idle
+if facing = p_idle &amp;&amp; jumping = false
    {   
-       draw_sprite(spr_player, image_index, x, y);
+       draw_sprite(spr_player, image_index++, x, y);
    }
-if facing = p_right
+if facing = p_right &amp;&amp; jumping = false
     {   
-        draw_sprite(spr_player_right, image_index, x, y);
+        draw_sprite(spr_player_right, image_index++, x, y);
     }
-if facing = p_left
+if facing = p_left &amp;&amp; jumping = false
     {   
-        draw_sprite(spr_player_left, image_index, x, y);
+        draw_sprite(spr_player_left, image_index++, x, y);
+    }
+if facing = p_right &amp;&amp; jumping = true
+    {
+        draw_sprite(spr_jump_right, 0, x, y);
+    }
+if facing = p_left &amp;&amp; jumping = true
+    {
+        draw_sprite(spr_jump_left, 0, x, y);
     }
 </string>
           </argument>

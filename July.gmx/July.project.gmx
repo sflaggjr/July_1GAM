@@ -11,6 +11,8 @@
       <sprite>sprites\spr_player</sprite>
       <sprite>sprites\spr_player_right</sprite>
       <sprite>sprites\spr_player_left</sprite>
+      <sprite>sprites\spr_jump_right</sprite>
+      <sprite>sprites\spr_jump_left</sprite>
     </sprites>
   </sprites>
   <backgrounds name="background">
