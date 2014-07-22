@@ -31,7 +31,8 @@ vspd = 0;
 grav = 0.2;
 jumpspeed = 7;
 movespeed = 4;
-
+facing = p_idle;
+image_speed = 0.5;
 
 </string>
           </argument>
@@ -55,15 +56,20 @@ movespeed = 4;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>//Getting input from the player
+            <string>///Player Inputs
+//Getting input from the player
 key_right = keyboard_check(vk_right);
 key_left = -keyboard_check(vk_left);
 key_jump = keyboard_check_pressed(vk_space);
+key_ascend = -keyboard_check(vk_up);
+key_desend = keyboard_check(vk_down);
 key_shoot = keyboard_check_pressed(vk_shift);
 
 //React to inputs
 move = key_left + key_right;
 hspd = move * movespeed;
+//climb = key_ascend + key_desend
+
 if (vspd &lt; 10)
     {
         vspd += grav;
@@ -92,9 +98,70 @@ if (place_meeting(x, y + vspd, obj_wall))
             }
         vspd = 0;
      } 
-
+//Update player facing
+if (move = 0)
+    {
+        facing = p_idle;
+    }
+if (move = 1)
+    {   
+        facing = p_right;
+    }
+if (move = -1)
+    {   
+        facing = p_left;
+    }
+        
+/*Ladders: Currently not functioning, however not breaking the game at this point.
+if (!place_meeting(x, y, obj_ladder))
+    {
+        while(place_meeting(x, y + sign(vspd), obj_ladder))
+            {
+                vspd = climb * -movespeed;
+            }
+    }
+    */
 x += hspd;
 y += vspd;
+
+//Shooting
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="8" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Drawing sprites
+
+if facing = p_idle
+   {   
+       draw_sprite(spr_player, image_index, x, y);
+   }
+if facing = p_right
+    {   
+        draw_sprite(spr_player_right, image_index, x, y);
+    }
+if facing = p_left
+    {   
+        draw_sprite(spr_player_left, image_index, x, y);
+    }
 </string>
           </argument>
         </arguments>
