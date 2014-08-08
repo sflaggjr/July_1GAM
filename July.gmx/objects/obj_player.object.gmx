@@ -28,13 +28,40 @@
             <string>///Initialize Variables
 hspd = 0;
 vspd = 0;
-grav = 0.2;
-jumpspeed = 7;
+grav = 0.4;
+jumpspeed = 9;
 movespeed = 4;
-facing = p_idle;
+facing = p_right;
 image_speed = 0.5;
 jumping = false;
+isIdle = true;
 
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
+    <event eventtype="3" enumb="2">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>if place_meeting(x , y + 1, obj_wall)
+    {
+        jumping = false;
+    }
 </string>
           </argument>
         </arguments>
@@ -103,15 +130,17 @@ if (place_meeting(x, y + vspd, obj_wall))
 //Update player facing
 if (move = 0)
     {
-        facing = p_idle;
+        isIdle = true
     }
 if (move = 1)
     {   
         facing = p_right;
+        isIdle = false;
     }
 if (move = -1)
     {   
         facing = p_left;
+        isIdle = false;
     }
 if (key_jump = 1)
     {
@@ -156,15 +185,15 @@ y += vspd;
             <kind>1</kind>
             <string>///Drawing sprites
 
-if facing = p_idle &amp;&amp; jumping = false
+if isIdle = true &amp;&amp; jumping = false
    {   
-       draw_sprite(spr_player, image_index++, x, y);
+       draw_sprite(spr_player, image_index, x, y);
    }
-if facing = p_right &amp;&amp; jumping = false
+if facing = p_right &amp;&amp; jumping = false &amp;&amp; isIdle = false
     {   
         draw_sprite(spr_player_right, image_index++, x, y);
     }
-if facing = p_left &amp;&amp; jumping = false
+if facing = p_left &amp;&amp; jumping = false &amp;&amp; isIdle = false
     {   
         draw_sprite(spr_player_left, image_index++, x, y);
     }
@@ -176,6 +205,31 @@ if facing = p_left &amp;&amp; jumping = true
     {
         draw_sprite(spr_jump_left, 0, x, y);
     }
+
+</string>
+          </argument>
+        </arguments>
+      </action>
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>///Debug Text
+draw_text(0, 0, "jumping: " + string(jumping));
+draw_text(0, 20, "isIdle: " + string(isIdle));
+draw_text(0, 40, "Score: " + string(score));
 </string>
           </argument>
         </arguments>
