@@ -35,6 +35,7 @@ facing = p_right;
 image_speed = 0.5;
 jumping = false;
 isIdle = true;
+falling = false;
 
 </string>
           </argument>
@@ -230,6 +231,7 @@ if facing = p_left &amp;&amp; jumping = true
 draw_text(0, 0, "jumping: " + string(jumping));
 draw_text(0, 20, "isIdle: " + string(isIdle));
 draw_text(0, 40, "Score: " + string(score));
+draw_text(0, 60, "Falling: " +string(falling));
 </string>
           </argument>
         </arguments>

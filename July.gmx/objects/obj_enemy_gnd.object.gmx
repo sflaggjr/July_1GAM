@@ -53,7 +53,8 @@ enemy_facing = e_right;
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>if enemy_vspd &lt; 10
+            <string>///Enemy movement
+if enemy_vspd &lt; 10
     {
         enemy_vspd += enemy_grav;
     }
@@ -82,8 +83,8 @@ if (place_meeting (x + enemy_hspd, y, obj_wall))
                         enemy_facing = e_right;
                     }
     }
-
-enemy_hspd = enemy_speed
+    
+enemy_hspd = enemy_speed;
 
 y += enemy_vspd;
 if enemy_facing = e_right
@@ -94,6 +95,7 @@ else
     {
         x -= enemy_hspd;
     }
+
 </string>
           </argument>
         </arguments>

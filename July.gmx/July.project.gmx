@@ -6,7 +6,6 @@
   <NewExtensions/>
   <sounds name="sound"/>
   <sprites name="sprites">
-    <sprite>sprites\spr_wall</sprite>
     <sprites name="Player Sprites">
       <sprite>sprites\spr_player</sprite>
       <sprite>sprites\spr_player_right</sprite>
@@ -17,6 +16,8 @@
     <sprites name="Objects">
       <sprite>sprites\spr_diamonds</sprite>
       <sprite>sprites\spr_spikes</sprite>
+      <sprite>sprites\spr_wall</sprite>
+      <sprite>sprites\spr_floor</sprite>
     </sprites>
     <sprites name="enemies">
       <sprite>sprites\spr_enemy1</sprite>
@@ -33,12 +34,13 @@
     <object>objects\obj_gem</object>
     <object>objects\obj_enemy_gnd</object>
     <object>objects\obj_enemy1</object>
+    <object>objects\obj_floor</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41859.7520864236</constant>
+    <constant name="GM_build_date">41860.1081906019</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
