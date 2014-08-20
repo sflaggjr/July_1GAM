@@ -62,7 +62,11 @@ falling = false;
             <string>if place_meeting(x , y + 1, obj_wall)
     {
         jumping = false;
+        falling = true;
     }
+
+
+
 </string>
           </argument>
         </arguments>
@@ -102,6 +106,7 @@ hspd = move * movespeed;
 if (vspd &lt; 10)
     {
         vspd += grav;
+        falling = true;
     }
 
 if (place_meeting(x, y + 1, obj_wall))
@@ -117,7 +122,7 @@ if (place_meeting(x+hspd, y, obj_wall))
                  x += sign(hspd);
             }
         hspd = 0;
-     }   
+     } 
 //Vertical Collision
 if (place_meeting(x, y + vspd, obj_wall))
     {
@@ -146,6 +151,7 @@ if (move = -1)
 if (key_jump = 1)
     {
         jumping = true;
+        audio_play_sound(snd_jump,1, false);
     }
         
 /*Ladders: Currently not functioning, however not breaking the game at this point.
