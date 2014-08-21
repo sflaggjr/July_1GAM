@@ -56,6 +56,7 @@ moving = false;
 if place_meeting(x, y - 5, obj_enemy1) &amp;&amp; moving = true
     {   
         with (obj_enemy_gnd) instance_destroy();
+        with (obj_spawner) total_monster -= 1;
     }
 /*if moving = true
     {
