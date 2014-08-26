@@ -53,11 +53,11 @@ moving = false;
           <argument>
             <kind>1</kind>
             <string>//moving tile to kill enemy   
-/*if place_meeting(x, y, obj_enemy1) &amp;&amp; obj_wall.moving = true
+if place_meeting(x, y, obj_enemy1) &amp;&amp; obj_wall.moving = true
     {
         instance_destroy();
         with (obj_spawner) spawned -= 1;
-    }*/
+    }
 /*if moving = true
     {
         --y;
@@ -118,7 +118,7 @@ if place_meeting(x, y, obj_enemy1) &amp;&amp; obj_wall.moving = true
         <exetype>2</exetype>
         <functionname></functionname>
         <codestring></codestring>
-        <whoName>other</whoName>
+        <whoName>self</whoName>
         <relative>0</relative>
         <isnot>0</isnot>
         <arguments>
@@ -127,7 +127,6 @@ if place_meeting(x, y, obj_enemy1) &amp;&amp; obj_wall.moving = true
             <string>if place_meeting(x, collision_pnt, obj_player) &amp;&amp; obj_player.jumping = true
     {  
         moving = true;
-        instance_create(x, y + sprite_get_height(), obj_killblock);
     }
     else
     {
