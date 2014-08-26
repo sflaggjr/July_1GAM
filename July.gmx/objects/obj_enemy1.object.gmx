@@ -176,6 +176,7 @@ else
         </arguments>
       </action>
     </event>
+<<<<<<< HEAD
     <event eventtype="4" ename="obj_killblock">
       <action>
         <libid>1</libid>
@@ -200,6 +201,8 @@ else
         </arguments>
       </action>
     </event>
+=======
+>>>>>>> parent of 197e4c2... 8/25/2014
     <event eventtype="4" ename="obj_enemyTeleport">
       <action>
         <libid>1</libid>
