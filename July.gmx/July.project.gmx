@@ -21,8 +21,8 @@
       <sprite>sprites\spr_wall</sprite>
       <sprite>sprites\spr_teleporter</sprite>
       <sprite>sprites\spr_monster_spawn</sprite>
+      <sprite>sprites\spr_killblock</sprite>
       <sprite>sprites\spr_floor</sprite>
-      <sprite>sprites\sprite12</sprite>
     </sprites>
     <sprites name="enemies">
       <sprite>sprites\spr_enemy1</sprite>
@@ -44,12 +44,13 @@
     <object>objects\obj_floor</object>
     <object>objects\obj_enemyTeleport</object>
     <object>objects\obj_spawner</object>
+    <object>objects\obj_killblock</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
   </rooms>
   <constants number="2">
-    <constant name="GM_build_date">41873.639608831</constant>
+    <constant name="GM_build_date">41877.6022710995</constant>
     <constant name="GM_version">'1.0.0.0'</constant>
   </constants>
   <help>
